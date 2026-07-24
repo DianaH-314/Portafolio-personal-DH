@@ -1,0 +1,232 @@
+:root{
+    /* Paleta de colores */
+    --color-DeepBlue: #00296B;
+    --color-AzulOscuro: #003F88;
+    --color-Azul: #00509D;
+    --color-NaranjaFuerte: #FDC500;
+    --color-Naranja: #FFD500;
+}
+
+/********************/
+/*SECCIÓN DEL NAVBAR*/
+.header {
+    position: fixed !important;
+    /*Para que el menú se mueva con el desplazamiento*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    /*background: rgba(255, 255, 255, 0.05); color del cristal*/
+    /* background: var(--color-primario);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);*/
+
+    background: var(--color-Azul);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.4s ease, border-bottom 0.4s ease, padding 0.4s ease;
+}
+
+.header.cambio-fondo {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(27, 32, 33, 0.1);
+    padding: 1rem 10%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 45px;
+    max-height: 45px;
+    width: auto;
+}
+
+.navbar a {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+    transition: 0.3s ease;
+}
+
+.header.cambio-fondo .navbar a {
+    color: var(--color-Azul);
+}
+
+
+.navbar a:hover,
+.navbar a.active .adelita-header.cambio-fondo .navbar a:hover,
+.adelita-header.cambio-fondo .navbar a.active {
+    color: var(--color-secundario);
+}
+
+.nav-acciones {
+    display: flex;
+    align-items: center;
+    /* Espacio entre el carrito y el botón */
+    gap: 1.5rem;
+    /* Separación con los demás elementos */
+    margin-left: 2.5rem;
+}
+
+.carrito-icono {
+    font-size: 1.6rem;
+    /* Lo hacemos un poco más grande para que resalte */
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.carrito-icono:hover {
+    color: var(--color-secundario);
+    transform: scale(1.5);
+}
+
+.adelita-header.cambio-fondo .carrito-icono {
+    color: var(--color-texto);
+}
+
+#menu-icon {
+    font-size: 2.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+
+}
+
+@media (max-width: 992px) {
+    .adelita-header {
+        padding: 1.25rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    /* 1. ESTADO EN EL TOPE: Navbar hasta arriba (Fondo oscuro con su propio blur) */
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 4%;
+        background: rgba(27, 32, 33, 0.9) !important;
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        font-size: 1.2rem;
+        margin: 1rem 0;
+        margin-left: 0;
+        text-align: center;
+        color: #ffffff !important;
+    }
+
+    /* 2. ESTADO CON SCROLL: El truco para forzar el blur denso */
+    .adelita-header.cambio-fondo .navbar,
+    .adelita-header.cambio-fondo .navbar.active {
+        /* Usamos un color con una pizca más de opacidad (0.4) para que el navegador tenga una capa base que "dibujar" con el blur */
+        background: rgba(255, 255, 255, 0.4) !important;
+
+        /* Forzamos el renderizado de capas del navegador */
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+
+        border-bottom: 1px solid rgba(48, 52, 63, 0.15);
+    }
+
+    /* Letras oscuras estables en scroll */
+    .adelita-header.cambio-fondo .navbar a {
+        color: var(--color-cuaternario) !important;
+    }
+
+    .adelita-header.cambio-fondo .navbar a.active,
+    .adelita-header.cambio-fondo .navbar a:hover {
+        color: var(--color-secundario) !important;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+}
+
+/*=================================
+        Hero Section
+===================================*/
+.hero-division{
+    position:relative; /*para que el texto y el video sepan cuál es su referencia*/
+    height: 75vh;  /*Este controla la altura del hero!!!*/
+    overflow: hidden; /*Este recorta lo que sobresalga del video!*/
+}
+
+.hero-text{
+    height: 100%;
+    position: relative;
+}
+
+.hero-video{
+    width:100%;
+    height: 100%;
+    /*display:block;*/
+    object-fit:cover;
+}
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.25);
+    z-index:2;
+}
+
+.hero-content{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:3;
+}
+
+.hero-content h1{
+    color:white;
+    font-size:5rem;
+}
+
+/*
+===============================
+        Botones
+===============================*/
+.btn-primary{
+    --bs-btn-bg: var(--color-NaranjaFuerte); /*color fondo*/
+    --bs-btn-border-color: var(--color-NaranjaFuerte); /*color borde*/
+    --bs-btn-color: #000;
+    --bs-btn-hover-bg: var(--color-Naranja); /*color cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-border-color: var(--color-Naranja); /*color borde cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-color: #000;
+    --bs-btn-active-bg: var(--color-Azul); /*color fondo cuando se hace click*/
+    --bs-btn-active-border-color: var(--color-Azul); /*color borde cuando se hace click*/
+}
