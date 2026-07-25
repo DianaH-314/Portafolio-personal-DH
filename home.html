@@ -14,13 +14,14 @@
     <link rel="stylesheet" href="style.css">
     <!--Link tipografías-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Wellfleet&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body style="background-color: lightblue;"> <!--ivory or seashell (mintcream?) its a safe choice, lightblue looks pretty too!! lightcyan might be good, powderblue puede ser, pero el verdeee Dx-->
     <header class="header">
         <a href="#" class="logo">
-            <img src="Audiovisual/MonogramaDH-noBG.png" href="#Inicio" width="120" height="120" alt="Monograma Diana Hurtado"
-            onclick="">
+            <img src="Audiovisual/MonogramaDH-noBG.png" href="#Inicio" width="120" height="120" class="logo img" alt="Monograma Diana Hurtado">
         </a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
@@ -52,9 +53,9 @@
             <div class="hero-overlay"></div>
 
             <div class="hero-content">
-                <h1>Diana Laura Hurtado Baños</h1>
-                <h2>Java Full Stack Developer Jr.</h2>
-                <p>
+                <h1 class="cables" style="color: var(--color-SkyBlue);">Diana Laura Hurtado Baños</h1>
+                <h2 class="texto" style="color: var(--color-Turquesa);">Java Full Stack Developer Jr.</h2>
+                <p class="texto" style="color: var(--color-Turquesa);">
                     Transformando ideas en experiencias digitales mediante desarrollo web, comunicación estratégica y análisis de datos.
                 </p>
                 <div class="hero-buttons">
@@ -76,9 +77,9 @@
             </div>
             <div class="col-lg-7">
 
-                <h2>Conoce a Diana</h2>
+                <h2 class="cables">Conoce a Diana</h2>
 
-                <p>
+                <p class="texto">
                     ¡Hola, soy Diana!
                     Soy comunicóloga en transición al desarrollo Full Stack.
                     Durante los últimos años trabajé creando estrategias digitales,
@@ -94,7 +95,7 @@
 
     <section id="proyectos" class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">Mis proyectos</h2>
+            <h2 class="text-center mb-5 cables">Mis proyectos</h2>
             <div class="row g-4">
                 <!-- PI -->
                 <div class="col-md-6 col-lg-4">
@@ -238,7 +239,7 @@
 
     <section id="tecnologias">
 
-    <h2 class="text-center mb-5">Tecnologías</h2>
+    <h2 class="text-center mb-5 cables">Tecnologías</h2>
         <!--Carrousel de tecnologías-->
         <div class="marquee">
             <div class="marquee-inner">
@@ -255,9 +256,9 @@
 
     <section id="cv">
         <div>
-            <h2 class="text-center mb-5">¿Quieres conocerme más?</h2>
+            <h2 class="text-center mb-5 cables">¿Quieres conocerme más?</h2>
 
-            <p>¡Puedes descargar mi CV completo aquí!</p>
+            <p class="texto">¡Puedes descargar mi CV completo aquí!</p>
 
             <a href="Audiovisual/Diana Laura Hurtado Baños - CV.pdf" class="btn btn-primary mt-auto" download="CV-DianaHurtado">
                 Descargar CV
@@ -267,25 +268,25 @@
 
     <section id="blog">
         <div>
-            <h2 class="text-center mb-5">Blog</h2>
+            <h2 class="text-center mb-5 cables">Blog</h2>
 
-            <p>En construcción 🔨
+            <p class="texto">En construcción 🔨
                 Próximamente estaré añadiendo artículos sobre mis experiencias, transición profesional, aprendizajes y tropiezos en esta vida llamada código.
             </p>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
+        <div class="footer-container">
             <div class="row align-items-center justify-content-center">
 
-                <div class="col-auto text-end mb-3 mb-md-0 px-3">
-                    <img src="Audiovisual/MonogramaDH-noBG.png" width="100" height="100" alt="Monograma Diana Hurtado">
-                </div>
+                <!-- <div class="col-auto text-end mb-3 mb-md-0 px-3">
+                    <img src="Audiovisual/MonogramaDH-noBG.png" class="footer-logo-img" alt="Monograma Diana Hurtado">
+                </div> -->
 
                 <div class="col-md-5 text-center mb-3 mb-md-0">
                     <div class="footer-contenido">
-                        <p class="mb-1">&copy; 2026 Diana Hurtado. Java FullStack Developer Jr.</p>
+                        <p class="mb-1 texto">&copy; 2026 Diana Hurtado. Java FullStack Developer Jr.</p>
                         <div class="footer-redes">
                             <a href="https://www.linkedin.com/in/diana-laura-hurtado-ba%C3%B1os/"><i class='bx bxl-linkedin'></i></a>
                             <a href="#"><i class='bx bxl-gmail'></i></a>
