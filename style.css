@@ -83,8 +83,8 @@ html {
 }
 
 .logo img {
-    height: 45px;
-    max-height: 45px;
+    height: 60px;
+    max-height: 60px;
     width: auto;
 }
 
@@ -98,14 +98,14 @@ html {
 }
 
 .header.cambio-fondo .navbar a {
-    color: var(--color-SkyBlue);
+    color: var(--color-Azure);
 }
 
 
 .navbar a:hover,
 .navbar a.active .adelita-header.cambio-fondo .navbar a:hover,
 .adelita-header.cambio-fondo .navbar a.active {
-    color: var(--color-SkyBlue);
+    color: var(--color-Azure);
 }
 
 .nav-acciones {
@@ -117,24 +117,23 @@ html {
     margin-left: 2.5rem;
 }
 
-.carrito-icono {
+/* .carrito-icono {
     font-size: 1.6rem;
-    /* Lo hacemos un poco más grande para que resalte */
     color: #ffffff;
     text-decoration: none;
     transition: 0.3s ease;
     display: flex;
     align-items: center;
-}
+} */
 
-.carrito-icono:hover {
+/* .carrito-icono:hover {
     color: var(--color-SkyBlue);
     transform: scale(1.5);
-}
+} */
 
-.header.cambio-fondo .carrito-icono {
+/* .header.cambio-fondo .carrito-icono {
     color: var(--color-Azure);
-}
+} */
 
 #menu-icon {
     font-size: 2.5rem;
@@ -195,12 +194,12 @@ html {
 
     /* Letras oscuras estables en scroll */
     .header.cambio-fondo .navbar a {
-        color: var(--color-Turquesa) !important;
+        color: var(--color-Azure) !important;
     }
 
     .header.cambio-fondo .navbar a.active,
     .header.cambio-fondo .navbar a:hover {
-        color: var(--color-SkyBlue) !important;
+        color: var(--color-Azure) !important;
     }
 
     .navbar.active {
