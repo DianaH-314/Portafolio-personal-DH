@@ -83,7 +83,7 @@ html {
 }
 
 .logo img {
-    height: 60px;
+    height: 72px;
     max-height: 60px;
     width: auto;
 }
@@ -103,9 +103,9 @@ html {
 
 
 .navbar a:hover,
-.navbar a.active .adelita-header.cambio-fondo .navbar a:hover,
-.adelita-header.cambio-fondo .navbar a.active {
-    color: var(--color-Azure);
+.navbar a.active .header.cambio-fondo .navbar a:hover,
+header.cambio-fondo .navbar a.active {
+    color: var(--color-Turquesa);
 }
 
 .nav-acciones {
@@ -116,24 +116,6 @@ html {
     /* Separación con los demás elementos */
     margin-left: 2.5rem;
 }
-
-/* .carrito-icono {
-    font-size: 1.6rem;
-    color: #ffffff;
-    text-decoration: none;
-    transition: 0.3s ease;
-    display: flex;
-    align-items: center;
-} */
-
-/* .carrito-icono:hover {
-    color: var(--color-SkyBlue);
-    transform: scale(1.5);
-} */
-
-/* .header.cambio-fondo .carrito-icono {
-    color: var(--color-Azure);
-} */
 
 #menu-icon {
     font-size: 2.5rem;
@@ -194,12 +176,12 @@ html {
 
     /* Letras oscuras estables en scroll */
     .header.cambio-fondo .navbar a {
-        color: var(--color-Azure) !important;
+        color: var(--color-Turquesa) !important;
     }
 
     .header.cambio-fondo .navbar a.active,
     .header.cambio-fondo .navbar a:hover {
-        color: var(--color-Azure) !important;
+        color: var(--color-Turquesa) !important;
     }
 
     .navbar.active {
@@ -231,7 +213,7 @@ html {
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:rgba(0,0,0,.25);
+    background:rgba(0,0,0,.40);
     z-index:2;
 }
 
@@ -239,7 +221,7 @@ html {
     position:absolute;
     inset:0;
 
-    display:flex;
+    /* display:flex; */
     /* flex-direction:column; */
     /* justify-content:center;
     align-items:center;
@@ -250,14 +232,16 @@ html {
 }
 
 .hero-content h1{
-    font-size: 80px;
+    font-size: clamp(3rem,6vw,5rem);
+    color: white;
     justify-content:left;
     align-items:left;
     text-align:left;
 }
 
 .hero-content h2{
-    font-size: 60px;
+    font-size: clamp(1.8rem,4vw,3rem);
+    color: var(--color-Turquesa);
     justify-content:center;
     align-items:center;
     text-align:center;
@@ -265,6 +249,8 @@ html {
 
 .hero-content p{
     font-size: 20px;
+    color: var(--color-Turquesa);
+    line-height: 1.6;
     max-width:650px;
     justify-content:center;
     align-items:center;
@@ -275,6 +261,9 @@ html {
     justify-content:center;
     align-items:center;
     text-align:center;
+    display:flex;
+    gap:1rem;
+    margin-top:2rem;
 }
 
 .btn-outline-primary{
@@ -289,8 +278,34 @@ html {
     --bs-btn-active-border-color: var(--color-Verde); /*color borde cuando se hace click*/
 }
 
-/*
-===============================
+/*======================================= 
+            Sobre mí
+========================================= */
+#sobre-mi{
+    padding:100px 0;
+}
+
+/* .about-photo{
+    width: 340px;
+    max-width:100%;
+    border-radius:20px;
+    display:block;
+    margin:auto;
+} */
+
+.about-text{
+    max-width:650px;
+}
+
+.stack-preview{
+font-size:1.05rem;
+color:var(--color-Azure);
+font-weight:600;
+letter-spacing:.4px;
+margin-top:1.5rem;
+}
+
+/* ===============================
         Botones
 ===============================*/
 .btn-primary{
