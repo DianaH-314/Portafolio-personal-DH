@@ -8,8 +8,10 @@
     <!--Link a Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-
+    <!--Link a la página de Boxicons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--Link a la página de Devicon-->
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <!--Link a la página de estilos-->
     <link rel="stylesheet" href="style.css">
     <!--Link tipografías-->
@@ -18,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Happy+Monkey&family=Saira+Semi+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Wellfleet&display=swap" rel="stylesheet">
 </head>
 
-<body style="background-color: silver;"> <!--floralwhite, ivory or seashell (mintcream?) its a safe choice, lightblue looks pretty too!! lightcyan might be good, powderblue puede ser, pero el verdeee Dx-->
+<body style="background-color: var(--color-background);"> <!--floralwhite, ivory or seashell (mintcream?) its a safe choice, lightblue looks pretty too!! lightcyan might be good, powderblue puede ser, pero el verdeee Dx-->
     <header class="header">
         <a href="#hero" class="logo">
             <img src="Audiovisual/MonogramaDH-noBG.png" href="#Inicio" width="120" height="120" class="logo img" alt="Monograma Diana Hurtado">
@@ -57,18 +59,21 @@
                     <div class="col-1"></div>
 
                     <div class="col-4">
-                        <h1 class="texto">Diana Laura Hurtado Baños</h1>
+                        <h1 class="texto">
+                            <span id="typing-text"></span> <!--para que aparezca el texto como en máquina de escribir-->
+                            <span class="cursor">|</span> <!--para el cursor parpadeante-->
+                        </h1>
                     </div>
 
                     <div class="col-1"></div>
 
                     <div class="col-5">
-                        <h2 class="texto">Java Full Stack Developer Jr.</h2>
+                        <h2 class="texto hero-subtitle hero-reveal">Java Full Stack Developer Jr.</h2>
                         <br>
-                        <p class="texto">
+                        <p class="texto hero-description hero-reveal">
                             Transformando ideas en experiencias digitales mediante desarrollo web, comunicación estratégica y análisis de datos.
                         </p>
-                        <div class="hero-buttons">
+                        <div class="hero-buttons hero-reveal">
                             <a href="#proyectos" class="btn btn-outline-primary">
                                 Ver proyectos
                             </a>
@@ -84,11 +89,11 @@
         </div>
     </section>
 
-    <section id="sobre-mi">
+    <section id="sobre-mi" class="reveal">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-5">
-                <img src="Audiovisual/Foto CV.jpeg" style=" width:350px; height: 470px; border-radius: 20px;" alt="Fotografía Diana Hurtado">
+                <img src="Audiovisual/Foto CV.jpeg" class="about-photo img-fluid" alt="Fotografía Diana Hurtado">
             </div>
             <div class="col-lg-7">
 
@@ -112,16 +117,16 @@
     </div>
     </section> 
 
-    <section id="proyectos" class="py-5">
+    <section id="proyectos" class="py-5 reveal">
         <div class="container">
             <h2 class="text-center mb-5 cables">Proyectos</h2>
             <div class="row g-4">
                 <!-- PI -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                    <div class="card h-100 proyecto-card">
                         <img src="Audiovisual/Logo-Toro-Forrajero.jpg"
                             height="180px"
-                            class="card-img-top"
+                            class="card-img-top proyecto-img"
                             alt="Toro Forrajero">
 
                         <div class="card-body d-flex flex-column">
@@ -134,12 +139,20 @@
                             </p>
 
                             <div class="mt-auto">
-                                <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce" class="btn btn-primary mt-auto">
-                                    Ver GitHub
-                                </a>
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Demo (🔨)
-                                </a>
+                                <div class="tech-stack">
+                                    HTML · CSS · Bootstrap · JavaScript · Git
+                                </div>
+
+                                <div class="proyecto-links">
+                                    <a href="https://github.com/D-a-v-i-d-Vargas/Toro-Forrajero-Ecommerce">
+                                        <i class='bx bxl-github'></i>
+                                            Código
+                                    </a>
+                                    <a href="#">
+                                        <i class='bx bx-rocket'></i>
+                                            Demo
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -147,10 +160,10 @@
 
                 <!-- Hackathon 1 -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                    <div class="card h-100 proyecto-card">
                         <img src="Audiovisual/Adelita-pro.png"
                             height="180px"
-                            class="card-img-top"
+                            class="card-img-top proyecto-img"
                             alt="Adelita Pro">
 
                         <div class="card-body d-flex flex-column">
@@ -163,12 +176,20 @@
                             </p>
 
                             <div class="mt-auto">
-                                <a href="https://github.com/tobdany/Adelita-Pro-Uniforms" class="btn btn-primary mt-auto">
-                                    Ver GitHub
-                                </a>
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Demo (🔨)
-                                </a>
+                                <div class="tech-stack">
+                                    HTML · CSS · Bootstrap · JavaScript · Git
+                                </div>
+
+                                <div class="proyecto-links">
+                                    <a href="https://github.com/tobdany/Adelita-Pro-Uniforms">
+                                        <i class='bx bxl-github'></i>
+                                            Código
+                                    </a>
+                                    <a href="#">
+                                        <i class='bx bx-rocket'></i>
+                                            Demo
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -176,10 +197,10 @@
 
                 <!-- Hackathon 2 -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                    <div class="card h-100 proyecto-card">
                         <img src="Audiovisual/Backend.jpg"
                             height="180px"
-                            class="card-img-top"
+                            class="card-img-top proyecto-img"
                             alt="Muy pronto">
 
                         <div class="card-body d-flex flex-column">
@@ -191,13 +212,21 @@
                                 Hackathon interno en Generation México.
                             </p>
 
-                            <div class="mt-auto">
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Ver GitHub (🔨)
-                                </a>
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Demo (🔨)
-                                </a>
+                            <div class="mt-auto">    
+                                <div class="tech-stack">
+                                    Java · Git
+                                </div>
+                                
+                                <div class="proyecto-links">
+                                    <a href="#">
+                                        <i class='bx bxl-github'></i>
+                                            Código
+                                    </a>
+                                    <a href="#">
+                                        <i class='bx bx-rocket'></i>
+                                            Demo
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -205,10 +234,10 @@
 
                 <!-- Proyecto de base de datos -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                    <div class="card h-100 proyecto-card">
                         <img src="Audiovisual/DataBase.jpg"
                             height="180px"
-                            class="card-img-top"
+                            class="card-img-top proyecto-img"
                             alt="Muy pronto">
 
                         <div class="card-body d-flex flex-column">
@@ -221,12 +250,20 @@
                             </p>
 
                             <div class="mt-auto">
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Ver GitHub (🔨)
-                                </a>
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Demo (🔨)
-                                </a>
+                                <div class="tech-stack">
+                                    MySQL · Git
+                                </div>
+
+                                <div class="mt-auto proyecto-links">
+                                    <a href="#">
+                                        <i class='bx bxl-github'></i>
+                                            Código
+                                    </a>
+                                    <a href="#">
+                                        <i class='bx bx-rocket'></i>
+                                            Demo
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -234,10 +271,10 @@
 
                 <!-- Proyecto de API (lab 12!!!) -->
                 <div class="col-md-6 col-lg-4">
-                    <div class="card h-100 shadow">
+                    <div class="card h-100 proyecto-card">
                         <img src="Audiovisual/APIs.jpg"
                             height="180px"
-                            class="card-img-top"
+                            class="card-img-top proyecto-img"
                             alt="Mesero api lol">
 
                         <div class="card-body d-flex flex-column">
@@ -249,13 +286,21 @@
                                 Laboratorio de manejo de APIs desarrollado en Generation México.
                             </p>
 
-                            <div class="mt-auto">
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Ver GitHub (🔨)
-                                </a>
-                                <a href="#" class="btn btn-primary mt-auto">
-                                    Demo (🔨)
-                                </a>
+                            <div class="mt-auto"></div>
+                                <div class="tech-stack">
+                                    AWS · Git
+                                </div>
+
+                                <div class="mt-auto proyecto-links">
+                                    <a href="#">
+                                        <i class='bx bxl-github'></i>
+                                            Código
+                                    </a>
+                                    <a href="#">
+                                        <i class='bx bx-window-open'></i>
+                                            Demo
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -265,71 +310,165 @@
         </div>
     </section>
 
-    <section id="tecnologias">
+    <section id="tecnologias" class="py-5 reveal">
+        <div class="container">
+            <h2 class="text-center cables mb-3">
+            Tecnologías
+            </h2>
 
-    <h2 class="text-center mb-5 cables">Tecnologías</h2>
+            <p class="text-center texto mb-5">
+            Estas son algunas de las tecnologías con las que desarrollo proyectos actualmente.
+            <br>
+            Siempre estoy ampliando este stack con nuevas herramientas y buenas prácticas.
+            </p>
 
-                <p class="texto" style="text-align: center;">
-                    He trabajado con backend, frontend y frameworks,
-                    <br>
-                    ¡pero siempre estoy aprendiendo!.
-                </p>
-        <!--Carrousel de tecnologías-->
-        <div class="marquee">
-            <div class="marquee-inner">
-                <img src="Audiovisual/HTML.png">
-                <img src="Audiovisual/CSS.png">
-                <img src="Audiovisual/Bootstrap.png">
-                <img src="Audiovisual/Git.png">
-                <img src="Audiovisual/GitHub.png">
-                <img src="Audiovisual/SQL.png">
-                <img src="Audiovisual/Java.png">
-                <img src="Audiovisual/Python.png">
-                <img src="Audiovisual/JavaScript.png">
+            <h3 class="tech-category texto">
+                Frontend
+            </h3>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/html5.svg" alt="HTML">
+                        <span>HTML</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/javascript.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/css.svg" alt="CSS">
+                        <span>CSS</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/bootstrap.svg" alt="Bootstrap">
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <h3 class="tech-category texto">
+                Backend
+            </h3>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-plain.svg" alt="Java">
+                        <span>Java</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/mysql.svg" alt="SQL">
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/python.svg" alt="Python">
+                        <span>Python</span>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="tech-category texto">
+                Herramientas
+            </h3>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/git.svg" alt="Git">
+                        <span>Git</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="Audiovisual/github.svg" alt="GitHub">
+                        <span>GitHub</span>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="tech-item">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-plain.svg" alt="VSC">
+                        <span>Visual Studio Code</span>
+                    </div>
+                </div>
+            </div>
+
     </section>
 
-    <section id="cv">
+    <section id="cv" class="reveal">
         <div class="container-lg">
-            <h2 class="text-center mb-5 cables">¿Quieres conocerme más?</h2>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-2"></div>
+            <h2 class="text-center mb-5 cables">Hablemos</h2>
+                <p class="text-center texto mb-5">
+                ¿Tienes una oportunidad, proyecto o simplemente quieres platicar?
+                <br>
+                ¡Me encantará leerte!
+                </p>
 
-                    <div class="col-4">    
-                        <h4 class="mb-5 cables">Habla conmigo</h4>
+                <div class="row justify-content-center g-5">
+                    <div class="col-lg-4">    
+                        <h4 class="mb-5 cables">¡Conectemos!</h4>
+                        <p>Puedes encontarme aquí:</p>
 
-                        <h5 class="texto">WhatsApp</h5>
-                        <h6 class="texto">+52 56 1174 3254</h6>
+                        <a href="www.linkedin.com/in/diana-laura-hurtado-baños">
+                            <i class='bx bxl-linkedin'></i>
+                                LinkedIn
+                        </a>
+
                         <br>
+                        <a href="https://github.com/DianaH-314">
+                            <i class='bx bxl-github'></i>
+                                GitHub
+                        </a>
+
+                        <br>
+                        <a href="https://wa.me/525611743254"
+                        target="_blank"
+                        class="contact-link">
+                            <i class='bx bxl-whatsapp'></i>
+                            WhatsApp
+                        </a>
                         
                         <br>
-                        <h4 class="mb-5 cables">Conoce mi trayectoria completa</h4>
-                        <p class="texto">¡Puedes descargar mi CV completo aquí!</p>
-                        <a href="Audiovisual/Diana Laura Hurtado Baños - CV.pdf" class="btn btn-primary mt-auto" download="CV-DianaHurtado">
-                            Descargar CV
+                        <a href="Audiovisual/Diana Laura Hurtado Baños - CV.pdf">
+                            <i class='bx bx-briefcase'></i>
+                            Descarga mi CV
                         </a>
                     </div>
 
-                    <div class="col-1"></div>
-
-                    <div class="col-4">
+                    <div class="col-lg-6">
                         <h4 class="text-center mb-5 cables">¿Trabajamos juntos?</h5>
                         <!--Formulario de contacto-->
-                        <form class="formulario-contacto">
+                        <form class="formulario-contacto" id="formulario-contacto">
 
                             <!-- Nombre y Teléfono -->
                             <div class="row g-3 mb-3">
                                 <!-- Nombre -->
                                 <div class="col-md-7">
-                                    <label for="nombre" class="form-label-custom fw-bold w-100">Nombre</label>
+                                    <label for="nombre" class="form-label-custom fw-bold w-100">¿Cómo te llamas?</label>
                                     <input type="text" id="nombre" name="nombre" autocomplete="off"
                                         class="form-control form-control-custom w-100" placeholder="Escribe tu nombre">
                                 </div>
 
                                 <!-- Teléfono -->
                                 <div class="col-md-5">
-                                    <label for="telefono" class="form-label-custom fw-bold w-100">Teléfono</label>
+                                    <label for="telefono" class="form-label-custom fw-bold w-100">¿Te puedo llamar?</label>
                                     <input type="tel" min="0" id="telefono" name="telefono"  maxlength="10" autocomplete="off" pattern="[0-9]{10}"
                                         class="form-control form-control-custom w-100" placeholder="(+52)">
                                 </div>
@@ -337,7 +476,7 @@
 
                             <!-- Correo electrónico -->
                             <div class="mb-3">
-                                <label for="correo" class="form-label-custom fw-bold w-100">Correo electrónico</label>
+                                <label for="correo" class="form-label-custom fw-bold w-100">¿Dónde puedo responderte?</label>
                                 <input type="email" id="correo" name="correo" autocomplete="off"
                                     class="form-control form-control-custom w-100"
                                     placeholder="correoelectronico@correodeejemplo.net">
@@ -354,25 +493,32 @@
                             <div class="alertaBoton"></div>
 							<br>
                                 <div class="d-grid gap-2 col-10 mx-auto cables">
-                                    <button class="btn btn-primary mt-auto texto" type="submit">Enviar</button>
+                                    <button class="btn btn-primary mt-auto texto" type="submit">¡Hablemos!</button>
                                     <!-- <a href="#" class="btn btn-primary mt-auto" type="submit">Enviar</a> -->
                                 </div>
                             <br>
 
                         </form>
 
-                        <div class="col-1"></div>
                     </div>
                 </div>
         </div>
     </section>
 
-    <section id="blog">
+    <section id="blog" class="reveal">
         <div>
             <h2 class="mb-5 cables" style="text-align: center;">Blog</h2>
 
-            <p class="texto" style="text-align: center;">En construcción 🔨
-                Próximamente estaré añadiendo artículos sobre mis experiencias, transición profesional, aprendizajes y tropiezos en esta vida llamada código.
+            <p class="texto" style="text-align: center;">
+                En construcción 🔨
+                <br>
+                Próximamente en este espacio compartiré lo que voy aprendiendo durante mi transición al desarrollo Full Stack: 
+                <br>
+                proyectos, errores, descubrimientos y recursos que me hubiera gustado conocer antes.
+                <br>
+                ¡Te invito a que me acompañes en este camino llamdo código!
+                <br>
+                (Y si tienes una recomendación, es ampliamente bienvenida)
             </p>
         </div>
     </section>
@@ -381,18 +527,14 @@
         <div class="footer-container">
             <div class="row align-items-center justify-content-center">
 
-                <!-- <div class="col-auto text-end mb-3 mb-md-0 px-3">
-                    <img src="Audiovisual/MonogramaDH-noBG.png" class="footer-logo-img" alt="Monograma Diana Hurtado">
-                </div> -->
-
                 <div class="col-md-5 text-center mb-3 mb-md-0">
+                    <p>
+                        Gracias por visitar este pequeño rincón de Internet. 🚀
+                        <br>
+                        ✨ ¡Nos vemos en el siguiente commit!
+                    </p>
                     <div class="footer-contenido">
                         <p class="mb-1 texto">&copy; 2026 Diana Hurtado. Java FullStack Developer Jr.</p>
-                        <div class="footer-redes">
-                            <a href="https://www.linkedin.com/in/diana-laura-hurtado-ba%C3%B1os/"><i class='bx bxl-linkedin bx-sm'></i></a>
-                            <a href="#"><i class='bx bxl-gmail bx-sm'></i></a>
-                            <a href="https://github.com/DianaH-314"><i class='bx bxl-github' bx-xl></i></a>
-                        </div>
                     </div>
                 </div>
 
@@ -404,6 +546,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+    <!--Link a la API para que mande el mail con la información-->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <!--Link al script de js-->
     <script src="script.js"></script>
 </body>

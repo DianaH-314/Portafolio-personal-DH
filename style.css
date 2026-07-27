@@ -1,11 +1,33 @@
 :root{
-    /* Paleta de colores */
-    --color-Azure: #0c85f5;
-    --color-SkyBlue: #0dcbff;
-    --color-Turquesa: #00e8dc;
-    --color-Menta: #0dffae;
-    --color-Verde: #0cf566;
-    --color-texto: #000;
+/* Colores */
+--color-primary:#2855C5;
+--color-secondary:#14B8A6;
+--color-dark:#1F2937;
+--color-background:#F8FAFC;
+--color-white:#FFFFFF;
+--color-border:#E5E7EB;
+
+/* Radios */
+--radius:18px;
+
+/* Sombra */
+--shadow:
+0 8px 24px rgba(31,41,55,.08);
+
+/* Transiciones */
+--transition:.30s ease;
+}
+
+section{
+    padding:100px 0;
+}
+
+#hero{
+    padding:0;
+}
+
+footer{
+    padding:0;
 }
 
 /*======================================= 
@@ -35,6 +57,18 @@ html {
     scroll-behavior: smooth;
 }
 
+/*Animación para que las secciones entren suavemente*/
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
 /*Propuesta de tamaño de los contenedores*/
 .container {
     max-width: 1100px;
@@ -56,9 +90,7 @@ html {
     width: 100%;
     padding: 1.3rem 10%;
 
-    /* background: var(--color-SkyBlue); */
-    background: lightsteelblue;
-    /* background: blur(15px); */
+    background: var(--color-primary);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
     display: flex;
@@ -95,23 +127,39 @@ html {
     font-weight: 500;
     margin-left: 2.5rem;
     transition: 0.3s ease;
+    position:relative;
 }
 
 .header.cambio-fondo .navbar a {
-    color: var(--color-Azure);
+    color: var(--color-primary);
 }
 
 
 .navbar a:hover,
 .navbar a.active .header.cambio-fondo .navbar a:hover,
 header.cambio-fondo .navbar a.active {
-    color: var(--color-Turquesa);
+    color: var(--color-secondary);
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--color-secondary);
+    transition:.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after{
+    width:100%;
 }
 
 .nav-acciones {
     display: flex;
     align-items: center;
-    /* Espacio entre el carrito y el botón */
     gap: 1.5rem;
     /* Separación con los demás elementos */
     margin-left: 2.5rem;
@@ -126,7 +174,7 @@ header.cambio-fondo .navbar a.active {
 }
 
 @media (max-width: 992px) {
-    .adelita-header {
+    .header {
         padding: 1.25rem 4%;
     }
 }
@@ -176,12 +224,12 @@ header.cambio-fondo .navbar a.active {
 
     /* Letras oscuras estables en scroll */
     .header.cambio-fondo .navbar a {
-        color: var(--color-Turquesa) !important;
+        color: var(--color-secondary) !important;
     }
 
     .header.cambio-fondo .navbar a.active,
     .header.cambio-fondo .navbar a:hover {
-        color: var(--color-Turquesa) !important;
+        color: var(--color-secondary) !important;
     }
 
     .navbar.active {
@@ -206,7 +254,6 @@ header.cambio-fondo .navbar a.active {
 .hero-video{
     width:100%;
     height: 100%;
-    /*display:block;*/
     object-fit:cover;
 }
 
@@ -220,12 +267,6 @@ header.cambio-fondo .navbar a.active {
 .hero-content{
     position:absolute;
     inset:0;
-
-    /* display:flex; */
-    /* flex-direction:column; */
-    /* justify-content:center;
-    align-items:center;
-    text-align:center; */
     gap:1.5rem;
 
     z-index:3;
@@ -241,7 +282,7 @@ header.cambio-fondo .navbar a.active {
 
 .hero-content h2{
     font-size: clamp(1.8rem,4vw,3rem);
-    color: var(--color-Turquesa);
+    color: var(--color-secondary);
     justify-content:center;
     align-items:center;
     text-align:center;
@@ -249,7 +290,7 @@ header.cambio-fondo .navbar a.active {
 
 .hero-content p{
     font-size: 20px;
-    color: var(--color-Turquesa);
+    color: white;
     line-height: 1.6;
     max-width:650px;
     justify-content:center;
@@ -269,29 +310,48 @@ header.cambio-fondo .navbar a.active {
 .btn-outline-primary{
     font-family: "Saira Semi Condensed", sans-serif;
     --bs-btn-bg: none; /*color fondo*/
-    --bs-btn-border-color: var(--color-Menta); /*color borde*/
+    --bs-btn-border-color: var(--color-primary); /*color borde*/
     --bs-btn-color: #FFFF;
-    --bs-btn-hover-bg: var(--color-Turquesa); /*color cuando se pone el puntero sobre el botón*/
-    --bs-btn-hover-border-color: var(--color-Turquesa); /*color borde cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-bg: var(--color-secondary); /*color cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-border-color: var(--color-secondary); /*color borde cuando se pone el puntero sobre el botón*/
     --bs-btn-hover-color: #000;
-    --bs-btn-active-bg: var(--color-Verde); /*color fondo cuando se hace click*/
-    --bs-btn-active-border-color: var(--color-Verde); /*color borde cuando se hace click*/
+    --bs-btn-active-bg: var(--color-primary); /*color fondo cuando se hace click*/
+    --bs-btn-active-border-color: var(--color-primary); /*color borde cuando se hace click*/
+}
+
+/*Para la animación de la máquina de escribir*/
+.cursor{
+    color: var(--color-secondary);
+    animation: blink .8s infinite;
+}
+
+@keyframes blink{
+50%{
+opacity:0;
+}
+}
+
+/*Para la animación del subtítulo, párrafo y botones*/
+.hero-reveal{
+    opacity:0;
+    transform:translateY(15px);
+    transition:.8s ease;
+}
+
+.hero-reveal.visible{
+    opacity:1;
+    transform:translateY(0);
 }
 
 /*======================================= 
             Sobre mí
 ========================================= */
-#sobre-mi{
-    padding:100px 0;
-}
 
-/* .about-photo{
-    width: 340px;
-    max-width:100%;
+.about-photo{
+    max-width:320px;
+    width:100%;
     border-radius:20px;
-    display:block;
-    margin:auto;
-} */
+}
 
 .about-text{
     max-width:650px;
@@ -299,7 +359,7 @@ header.cambio-fondo .navbar a.active {
 
 .stack-preview{
 font-size:1.05rem;
-color:var(--color-Azure);
+color:var(--color-primary);
 font-weight:600;
 letter-spacing:.4px;
 margin-top:1.5rem;
@@ -310,69 +370,129 @@ margin-top:1.5rem;
 ===============================*/
 .btn-primary{
     font-family: "Saira Semi Condensed", sans-serif;
-    --bs-btn-bg: var(--color-Menta); /*color fondo*/
-    --bs-btn-border-color: var(--color-Menta); /*color borde*/
-    --bs-btn-color: #000;
-    --bs-btn-hover-bg: var(--color-Turquesa); /*color cuando se pone el puntero sobre el botón*/
-    --bs-btn-hover-border-color: var(--color-Turquesa); /*color borde cuando se pone el puntero sobre el botón*/
-    --bs-btn-hover-color: #000;
-    --bs-btn-active-bg: var(--color-Verde); /*color fondo cuando se hace click*/
-    --bs-btn-active-border-color: var(--color-Verde); /*color borde cuando se hace click*/
+    --bs-btn-bg: var(--color-primary); /*color fondo*/
+    --bs-btn-border-color: var(--color-primary); /*color borde*/
+    --bs-btn-color:white;
+    --bs-btn-hover-bg: var(--color-secondary); /*color cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-border-color: var(--color-secondary); /*color borde cuando se pone el puntero sobre el botón*/
+    --bs-btn-hover-color: white;
+    --bs-btn-active-bg: var(--color-primary); /*color fondo cuando se hace click*/
+    --bs-btn-active-border-color: var(--color-primary); /*color borde cuando se hace click*/
 }
 
 /*================================================
                     Cards
 ==================================================*/
+.proyecto-card{
+    border:1px solid var(--color-border);
+    border-radius:18px;
+    box-shadow:none;
+    transition:.35s ease;
+}
+
+.proyecto-card:hover{
+    transform:translateY(-8px) scale(1.03);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.proyecto-card:hover img{
+    transform:scale(1.04);
+}
+
+.proyecto-img{
+    transition:.35s ease;
+}
+
 .card-title{
-    font: bolder;
+    font-weight:700;
     font-family: "Saira Semi Condensed";
-    color: var(--color-Verde);
+    color: var(--color-primary);
 }
 
 .card-text{
     font-family: "Saira Semi Condensed";
-    color: var(--color-texto);
+    color: var(--color-dark);
 }
 
-/* .card-button{
+.tech-stack{
+    margin:18px 0;
+    color:var(--color-dark);
+    font-size:.9rem;
+}
+
+.proyecto-links{
     display:flex;
-    gap:1rem;
-    justify-content:center;
-    flex-wrap:wrap;
-} */
+    gap:20px;
+    margin-top:20px;
+}
+
+.proyecto-links a{
+    text-decoration:none;
+    color:var(--color-primary);
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.proyecto-links a:hover{
+    color:var(--color-secondary);
+    transform:translateY(-3px);
+}
 
 /*================================================
-                Carrousel
+                Tecnologías
 ==================================================*/
-body {
-    margin: 0;
+.tech-item{
+    background:white;
+    border:1px solid rgba(12,133,245,.15);
+    border-radius:18px;
+    padding:28px;
+    text-align:center;
+    transition:.35s ease;
 }
 
-.marquee {
-    overflow-x: clip;
-    white-space: nowrap;
-    position: relative;
-    width: 100%;
+.tech-item img{
+    width:55px;
+    margin-bottom:15px;
+    transition:.35s ease;
 }
 
-.marquee-inner {
-    display: flex;
-    align-items: center;
-    gap: 2vw;
-    padding: 12vh 0;
-    will-change: transform;
+.tech-item span{
+    display:block;
+    font-weight:600;
+    transition:.35s ease;
 }
 
-.marquee-inner img {
-    height: 100%;
-    transition: transform 0.5s;
-    flex-shrink: 0;
-    width: 20vw;
-    border-radius: 2rem;
+.tech-item:hover{
+    transform:translateY(-4px);
+    border-color:var(--color-primary);
+    box-shadow:0 10px 25px rgba(37,99,235,.12);
 }
 
-.marquee-inner img:hover {
-    transform: scale(1.03);
+.tech-item:hover img{
+    transform:rotate(-3deg) scale(1.08);
+    filter:drop-shadow(0 0 10px rgba(20,184,166,.35));
+}
+
+.tech-item:hover span{
+    color:var(--color-primary);
+}
+
+.tech-category{
+    text-align:center;
+    color:var(--color-primary);
+    margin-top: 2rem;
+    margin-bottom:1rem;
+    letter-spacing:2px;
+    position:relative;
+}
+
+.tech-category::after{
+    content:"";
+    display:block;
+    width:80px;
+    height:2px;
+    background:var(--color-secondary);
+    margin:12px auto 0;
 }
 
 /*================================================
@@ -383,41 +503,37 @@ body {
     font-family: "Wellfleet", serif;
     font-weight: 400;
     font-style: normal;
+    margin-bottom:.6rem;
+}
+
+.formulario-contacto .mb-3{
+    margin-bottom:1.8rem!important;
 }
 
 .formulario-contacto input{
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; */
-    border: 2px solid var(--color-Verde);
+    border: 2px solid var(--color-secondary);
     border-radius: 2rem;
     padding: 1.5rem;
     font-family: "Saira Semi Condensed", sans-serif;
     font-weight: 500;
-    color: var(--color-texto);
+    color: var(--color-dark);
     background: none;
-    outline: var(--color-Verde);
+    outline: var(--color-secondary);
     z-index: 1;
 }
 
 .formulario-contacto textarea{
-    /* position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; */
-    border: 2px solid var(--color-Verde);
+    border: 2px solid var(--color-secondary);
     border-radius: 2rem;
     padding: 1.5rem;
     font-family: "Saira Semi Condensed", sans-serif;
     font-weight: 500;
-    color: var(--color-texto);
+    color: var(--color-dark);
     background: none;
-    outline: var(--color-Verde);
+    outline: var(--color-secondary);
     z-index: 1;
 }
+
 /*================================================
                     Footer
 ==================================================*/
@@ -426,8 +542,8 @@ body {
 }
 
 .footer {
-    background-color: var(--color-Azure);
-    color: var(--color-Menta);
+    background-color: var(--color-primary);
+    color: var(--color-white);
     height: 125px;
     width: 100% !important;
     /* Fuerza el ancho completo */
@@ -440,14 +556,67 @@ body {
     margin-bottom: 10px;
 }
 
-/* Estilos para los iconos de Redes Sociales */
-.footer-redes a {
-    color: var(--color-Menta);
-    font-size: 1.5rem;
-    margin: 0 10px;
-    text-decoration: none;
+/*============================
+        Responsivo en
+        dispositivos
+==============================*/
+
+@media (max-width:768px){
+    /*Navbar*/
+.navbar{
+    background:var(--color-dark);
+    backdrop-filter:none;
 }
 
-.footer-redes a:hover {
-    color: var(--color-Verde);
+.header.cambio-fondo .navbar,
+.header.cambio-fondo .navbar.active{
+
+    background: var(--color-dark) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+
+}
+
+    /*Hero section*/
+.hero-content{
+    text-align:center;
+    justify-content:center;
+    align-items:center;
+    padding:0 1.5rem;
+}
+
+.hero-content h1{
+    font-size:3rem;
+}
+
+.hero-content h2{
+    font-size:2rem;
+}
+
+.hero-content p{
+    font-size:1.1rem;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:1rem;
+}
+
+/*Sobre mi*/
+#sobre-mi{
+    text-align:center;
+}
+
+.about-photo{
+    margin:0 auto 2rem;
+    display:block;
+}
+
+/*Footer*/
+.footer-contenido p{
+    font-size:.9rem;
+    line-height:1.5;
+}
+
 }
