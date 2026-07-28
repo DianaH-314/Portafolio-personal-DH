@@ -20,7 +20,7 @@
 - **Contacto Interactivo:**
   - Envío de correos directo desde la web mediante **EmailJS**.
   - Descarga directa de CV actualizado.
-  - Enlaces directos a LinkedIn, GitHub y contacto telefónico.
+  - Enlaces directos a LinkedIn, GitHub y contacto por mensaje en WhatsApp.
 - **Blog (En Construcción 🚧):** Sección dedicada a futuros artículos y publicaciones sobre aprendizaje y desarrollo web.
 
 ---
@@ -29,8 +29,8 @@
 
 - **HTML5:** Estructuración semántica del sitio.
 - **CSS3:** Estilos personalizados, diseño responsivo y animaciones.
-- **JavaScript (ES6+):** Lógica interactiva, consumo de APIs y manejo del DOM.
-- **Bootstrap 5:** Framework para maquetación rápida y grid responsivo.
+- **JavaScript:** Lógica interactiva, consumo de APIs y manejo del DOM.
+- **Bootstrap:** Framework para maquetación rápida y grid responsivo.
 - **EmailJS:** Integración para el envío del formulario de contacto sin backend.
 
 ---
@@ -38,7 +38,7 @@
 ## 📬 Contacto
 
 - **LinkedIn** [Diana Hurtado](https://www.linkedin.com/in/diana-laura-hurtado-ba%C3%B1os/)
-- **GitHub:** @DianaH-314
+- **GitHub:** [@DianaH-314](https://github.com/DianaH-314)
 - **Email:** ¡Contáctame mediante el formulario en el portafolio!.
 
 --- 
